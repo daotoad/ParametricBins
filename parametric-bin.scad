@@ -1,11 +1,3 @@
-height=46.9;
-topWidth=39;
-topDepth=54.3;
-bottomScale=0.95;
-cornerRadius=4;
-wallThickness=1;
-footHeight=2;
-
 module hemisphere ( r ) {
     difference() {
         sphere(r=r);
@@ -64,7 +56,7 @@ module binBody ( topWidth, topDepth, bottomWidth, bottomDepth, height, cornerRad
 }
 
 
-module bin( width, depth, height, taper, radius, wallThickness, footHeight ) {
+module parametricBin( width, depth, height, taper, radius, wallThickness, footHeight ) {
     tW  = width;
     tD  = depth;
     bW  = taper * width;
@@ -155,13 +147,3 @@ module foot( r, h, wall ) {
     }
 }
 
-
-bin(
-    width  = topWidth, 
-    depth  = topDepth,
-    height = height,
-    taper  = bottomScale,
-    radius = cornerRadius,
-    wallThickness = wallThickness,
-    footHeight = footHeight
-);
